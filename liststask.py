@@ -20,12 +20,14 @@ print(trainees)
 
 # Remove John and Mary from the list
 trainees.remove("John")
-
 del(trainees[0][1][2])
 print(trainees)
 
 # Using a function, determione the lenght of this list
 print(len(trainees))
+
+# checking if its a list
+print(type(trainees))
 
 
 
