@@ -23,14 +23,17 @@ print(my_ds)
 
 edit = my_ds[4]
 editrev = str(edit)[::-1]
-int(editrev)
+editint = int(editrev)
+my_ds[4] = editint
+
+print(my_ds)
 
 
 
 
-# # Changing the name "John" to "Jane"
-# my_ds[1]= "John"
-# # print(my_ds)
+# Changing the name "John" to "Jane"
+my_ds[1]= "John"
+print(my_ds)
 
 
 
