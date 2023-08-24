@@ -1,6 +1,6 @@
 days = ("Monday","Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday")
 
-# Find wwednesday using an index
+# Find wednesday using an index
 print(days[2])
 
 # Using a function find the length of the tuple
