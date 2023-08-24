@@ -7,7 +7,6 @@ days.remove("Sunday")
 print(days)
 
 # Add them back to the set
-
 days.add("Friday")
 days.add("Sunday")
 
