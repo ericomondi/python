@@ -11,7 +11,7 @@ print(my_ds[2])
 # print Maths
 print(my_ds[3][1])
 
-# In the dictiuonary with the key currency
+# In the dictionary with the key currency
 #  add another key "amount" with the value "90"
 
 my_ds[3][2]["amount"]= "90"
