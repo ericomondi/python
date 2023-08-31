@@ -7,14 +7,24 @@
 # e.g if a user enters “712345678”, the program should display “+254712345678”
 
 ph_num = input("Enter phone number: ")
-
-if len(ph_num) == 12 and ph_num.index("254") == 0:
+if len(ph_num)== 13 and ph_num.index("+254")==0:
+    num = ph_num
+elif len(ph_num) == 12 and ph_num.index("254") == 0:
     num= "+" + ph_num
-    
-elif len(ph_num)== 10 and ph_num.index("07") == 0:
-    num = "+254" + ph_num[1:]
-elif  len(ph_num) == 9 and ph_num.index("7") == 0:
-    num = "+254" + ph_num   
+elif len(ph_num)== 10:
+    if ph_num.find("07") == 0:
+         num = "+254" + ph_num[1:]
+    elif ph_num.find("01") == 0:
+         num = "+254" + ph_num[1:] 
+    else:
+         pass            
+elif  len(ph_num) == 9:
+    if ph_num.find("7") == 0:
+           num = "+254" + ph_num 
+    elif ph_num.find("1") == 0:
+         num = "+254" + ph_num 
+    else:
+         pass    
 else:
     print("Invalid number")
 

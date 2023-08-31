@@ -20,9 +20,10 @@ else:
 num = int(input("Enter number: "))
 
 if num % 2 == 0:
-    print("It's an even number")
-    if num % 4 == 0:
-        print("It's divisible by 4")
+        if num % 4 == 0:
+           print("It's divisible by 4")
+        else:
+             print("Its an even number")        
 else:
     print("Its a odd number")
 
