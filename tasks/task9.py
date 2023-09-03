@@ -6,6 +6,10 @@
 # ***
 # ****
 # *****.
+# for i in range(0,6):
+#     print("*" * i)
 
-for i in range(0,6):
-    print("*" * i)
+num = int(input("Enter the no of rows required: "))
+rows = num + 1
+for n in range(0,rows):
+    print("*" * n)

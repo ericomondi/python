@@ -4,12 +4,25 @@
 # otherwise display an error “invalid character entered” and
 # take the user to re-enter the inputs .
 
-num1 = float(input("Enter first number: "))
-num2 = float(input("Enter second number: "))
-
-if int(num1) == num1 and int(num2) == num2:
-    total = num1+num2
-# elif float(num1) == num1 and float(num2) == num2:
-#     total = num1+num2
+try:
+    num1 = float(input("Enter first number: "))
+    num2 = float(input("Enter second number: "))
+except ValueError:
+    print("Invalid input")
 else:
-    print("Invalid characters")
+    total = num1 + num2
+
+print(total)
+
+
+
+
+
+
+
+    
+
+
+
+
+
