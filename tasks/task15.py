@@ -5,7 +5,7 @@
 
 from functions import *
 
-nhif = find_nhif(gross_salary)
+
 
 print(f'The gross salary is {gross_salary}')
 print(f'NHIF pay is {nhif}')  
