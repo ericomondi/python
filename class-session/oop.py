@@ -27,7 +27,7 @@ class Perfomance:
     
 
 
-s1 = Perfomance(50,50,50,50)
+s1 = Perfomance(50,50,50,50,50)
 
 
 s1.find_total_marks()
