@@ -3,7 +3,8 @@ class Payroll():
     benefits = 0
     
 
-    def __init__(self, bs, b):
+    def __init__(self, bs = int(input("Enter basic salary: ")),
+                  b = int(input("Enter benefits: "))):
         self.basic_salary = bs
         self.benefits = b
         self.find_gross_salary()
@@ -105,10 +106,5 @@ class Payroll():
         print(f'The net salary is {self.net_salary}')
 
 
-    
-
-employee1 = Payroll(
-    int(input("Enter basic salary: ")),
-    int(input("Enter benefits: "))
-)
        
+Payroll()
