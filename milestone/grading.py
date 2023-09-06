@@ -43,7 +43,7 @@ class Grading():
     def insert_dict(self):
         self.results["total"] = self.total
         self.results["avarage_mks"] =self.avg_marks
-        self.results["grade"] = self.avg_marks
+        self.results["grade"] = self.grade
 
 class Students(Grading):
     stud_result = {}
