@@ -17,7 +17,7 @@ class Grading():
         self.find_total_marks()
         self.find_avg_marks()
         self.find_grade()
-        self.insert_list()
+        self.insert_dict()
 
     def find_total_marks(self):
         self.total = self.math + self.eng + self.kis + self.sci + self.sos
@@ -40,7 +40,7 @@ class Grading():
             self.grade = "E"
         # print(f'The grade is {self.grade}')
        
-    def insert_list(self):
+    def insert_dict(self):
         self.results["total"] = self.total
         self.results["avarage_mks"] =self.avg_marks
         self.results["grade"] = self.avg_marks
