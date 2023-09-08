@@ -1,6 +1,7 @@
 class Payroll():
     basic_salary = 0
     benefits = 0
+    out_net = {}
     
 
     def __init__(self, bs = int(input("Enter basic salary: ")),
@@ -15,10 +16,12 @@ class Payroll():
         self.find_taxable_income()
         self.find_payee()
         self.find_netsalary()
+        self.add()
 
     def find_gross_salary(self):
         self.gross_salary = self.basic_salary + self.benefits
-        print(f'The gross salary is {self.gross_salary}')
+        # print(f'The gross salary is {self.gross_salary}')
+
     
     def find_nhif(self):
 
@@ -54,29 +57,39 @@ class Payroll():
             self.nhif = 1600
         else :
             self.nhif = 1700
-        print(f'Your NHIF contribution is {self.nhif}')
+        # print(f'Your NHIF contribution is {self.nhif}')
+
+
 
     def find_nssf(self, rate = 0.06):
         if self.gross_salary <= 18000:
             self.nssf = self.gross_salary * rate
         else:
             self.nssf = 18000 * rate
-        print(f'Your NSSF contribution is: {self.nssf}')
+        # print(f'Your NSSF contribution is: {self.nssf}')
+
+
 
     def find_nhdf(self, rate = 0.015):
         if self.gross_salary <= 83334:
             self.nhdf = self.gross_salary * rate
         else:
             self.nhdf = 2500
-        print(f'Your NHDF contribution is {self.nhdf}')
+        # print(f'Your NHDF contribution is {self.nhdf}')
+
+
 
     def find_nssf_nhdf_total(self):
         self.nssf_nhdf_total = self.nssf +self.nhdf
-        print(f'NSSF-NHDF total is {self.nssf_nhdf_total}')
+        # print(f'NSSF-NHDF total is {self.nssf_nhdf_total}')
+
+
 
     def find_taxable_income(self):
         self.taxable_income = self.gross_salary - self.nssf_nhdf_total
-        print(f'The taxable income is {self.taxable_income}')
+        # print(f'The taxable income is {self.taxable_income}')
+
+
 
     def find_payee(self,personal_relief = 2400):
         self.netpayee = 0
@@ -90,12 +103,14 @@ class Payroll():
             grosspayee = (self.taxable_income - 32333) * 0.3 + 4483.25
             self.netpayee = grosspayee - personal_relief
         elif (self.taxable_income <= 800000):
-            grosspayee = (self.taxable_income - 500000) * 0.325 + 144783.35 + 2400
+            grosspayee = (self.taxable_income - 500000) * 0.325 + 144783.35
             self.netpayee = grosspayee - personal_relief
         else:
-            grosspayee = (self.taxable_income - 800000) * 0.35 + 242283.35 + 2400
+            grosspayee = (self.taxable_income - 800000) * 0.35 + 242283.35
             self.netpayee = grosspayee - personal_relief
-        print(f'The net Payee is {self.netpayee}')
+        # print(f'The net Payee is {self.netpayee}')
+
+
 
     def find_netsalary(self):
         # net_salary = gross_salary - (nhif + nhdf +  nssf + payee)
@@ -103,7 +118,19 @@ class Payroll():
             self.nhif + self.nhdf + self.nssf + 
             self.netpayee
         )
-        print(f'The net salary is {self.net_salary}')
+        # print(f'The net salary is {self.net_salary}')
+
+
+
+    def add(self):
+        self.out_net["Gross_Salary"] = self.gross_salary
+        self.out_net["NHIF"] = self.nhif
+        self.out_net["NSSF"] = self.nssf
+        self.out_net["NHDF"] = self.nhdf
+        self.out_net["Taxable_Income"] = self.taxable_income
+        self.out_net["Net_Payee"] = self.netpayee
+        self.out_net["Net_Salary"] = self.net_salary
+        print(self.out_net)
 
 
        
